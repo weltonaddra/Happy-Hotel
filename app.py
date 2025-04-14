@@ -10,5 +10,5 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
 
 
-#look for github actions and codebot to check packages
+#look for github actions and dependabot to check packages
 #Package control
