@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Hello from Flask in Codespaces!"
+    return render_template('index.html')  # loads templates/index.html
 
 @app.route('/api/rooms', methods=['GET'])
 def get_rooms():
