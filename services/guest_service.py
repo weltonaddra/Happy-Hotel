@@ -1,21 +1,14 @@
-from models.guest import Guest
+from models.guest_model import Guest
 
 class GuestService:
-    _guests = []
+    def __init__(self):
+        self._guests: dict[int, Guest] = {}
 
-    @classmethod
-    def add_guest(cls, guest_data):
-        guest = Guest(**guest_data)
-        cls._guests.append(guest)
-        return guest
+    def add_guest(self, guest: Guest):
+        self._guests[guest.id] = guest
 
-    @classmethod
-    def get_all_guests(cls):
-        return cls._guests
+    def get_guest_by_id(self, guest_id: int) -> Guest | None:
+        return self._guests.get(guest_id)
 
-    @classmethod
-    def find_guest_by_email(cls, email: str):
-        for g in cls._guests:
-            if g.email == email:
-                return g
-        return None
+    def get_all_guests(self):
+        return [guest.to_dict() for guest in self._guests.values()]

@@ -1,0 +1,3 @@
+Routes folder holds api endpoints for specific sections like guest, room, and reservations
+It saves the the group of api endpoints as a blueprint, which can then be linked to the 
+app.py file which helps keep the api calls organized
