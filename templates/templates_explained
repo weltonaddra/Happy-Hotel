@@ -1,0 +1,7 @@
+Temoplates directory holds html files 
+
+ layout.html        <-- Base template 
+ index.html         <-- Home page
+ guests.html        <-- Guest list
+ rooms.html         <-- Room list
+ reservations.html  <-- Reservations
