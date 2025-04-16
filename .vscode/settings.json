@@ -1,0 +1,12 @@
+{
+  "liveSassCompile.settings.includePaths": ["./node_modules"],
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/templates/static/css"
+    }
+  ],
+  "liveSassCompile.settings.excludeList": [],
+  "liveSassCompile.settings.generateMap": true
+}
