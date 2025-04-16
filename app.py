@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html')  # This looks for templates/index.html
+    return render_template('layout.html')  # This looks for templates/index.html
 
 @app.route('/api/rooms', methods=['GET'])
 def get_rooms():
