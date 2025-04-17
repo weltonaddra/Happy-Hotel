@@ -38,11 +38,35 @@
       <use xlink:href="assets/brand/coreui.svg#sign"></use>
     </svg>
   </div>
+  
   <ul class="sidebar-nav" data-coreui="navigation" data-simplebar>
-    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
-    <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
-    <li class="nav-item"><a class="nav-link" href="reservations.html">Reservations</a></li>
+    
+<div class="sidebar sidebar-dark sidebar-fixed d-flex flex-column" id="sidebar">
+  
+      <!-- Top Menu Items -->
+  <div class="sidebar-top">
+    <ul class="sidebar-nav">
+      <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </div>
+  <div class= "flex_space_between"></div>
+  
+  <!-- Middle Menu Items -->
+  <div class="center-both">
+    <ul class="sidebar-nav">
+      <li class="nav-item"><a class="nav-link" href="reservations.html">Reservations</a></li>
+      <li class="nav-item"><a class="nav-link" href="checkin.html">Arrivals</a></li>
+      <li class="nav-item"><a class="nav-link" href="checkout.html">Departures</a></li>
+      <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
+      <li class="nav-item"><a class="nav-link" href="guests.html">Guests</a></li>
+    </ul>
+  </div>
+
+  
+  <!-- More Options -->
+  <div class="sidebar-nav">
     <li class="nav-group">
+
       <a class="nav-link nav-group-toggle" href="#">More Options</a>
       <ul class="nav-group-items">
         <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
@@ -57,20 +81,40 @@
 <!-- === MAIN WRAPPER START === -->
 <div class="wrapper d-flex flex-column min-vh-100 bg-light">
   <!-- === HEADER === -->
-  <header class="header header-sticky mb-4">
-    <div class="container-fluid">
-      <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
-        <svg class="icon icon-lg">
-          <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
-        </svg>
-      </button>
-      <a class="header-brand d-md-none" href="#">
-        <svg width="118" height="46">
-          <use xlink:href="assets/brand/coreui.svg#full"></use>
-        </svg>
-      </a>
+<!-- Header section with sticky behavior and bottom margin -->
+<header class="header header-sticky mb-4">
+  <!-- Container for flexible layout, spaced and vertically centered -->
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+
+    <!-- Centered hotel title with full height
+    <div class="flex_both" style="height: 100px; flex: 1;">
+      <h1 class="mb-0">
+        <a class="nav-link" href="layout.html">Happy Hotel</a>
+      </h1>
+    </div> -->
+
+    <div class="title-container">
+      <h1 class="hotel-title">
+        <a class="nav-link" href="layout.html">Happy Hotel</a>
+      </h1>
     </div>
-  </header>
+
+    <!-- Sidebar toggle button for small/medium devices -->
+    <button class="header-toggler px-md-0 me-md-3" type="button"
+      onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+      <svg class="icon icon-lg">
+        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
+      </svg>
+    </button>
+
+    <!-- Brand logo shown only on medium devices and below -->
+    <a class="header-brand d-md-none" href="#">
+      <svg width="118" height="46">
+        <use xlink:href="assets/brand/coreui.svg#full"></use>
+      </svg>
+    </a>
+  </div>
+</header>
 
   <!-- === PAGE CONTENT START === -->
 

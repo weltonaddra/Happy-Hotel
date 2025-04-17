@@ -1,4 +1,4 @@
-@use "@coreui/coreui/scss" as * with (
+@use "../../node_modules/@coreui/coreui/scss/coreui" as * with (
   $enable-deprecation-messages: false
 ); 
 
@@ -13,6 +13,78 @@ body {
   padding-inline: var(--cui-sidebar-occupy-start, 0) var(--cui-sidebar-occupy-end, 0);
   will-change: auto;
   @include transition(padding .15s);
+}
+
+
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .sidebar-nav-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+
+.flex_horizontal {
+  display: flex;
+  justify-content: center;
+} 
+.flex_vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex_both {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+}
+
+.flex_both h1 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+
+
+.flex_space_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.center-horizontal {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-both {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.align-right {
+  float: right;
+}
+.align-left {
+  float: left;
+}
+.align-center {
+  text-align: center;
 }
 
 .header > .container-fluid,
@@ -64,4 +136,21 @@ body {
   .footer {
     --cui-footer-bg: var(--cui-body-bg);
   }
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; // Full viewport height
+  width: 100vw; // Full viewport width
+  background-color: var(--cui-tertiary-bg); // Optional: match the background color
+  margin: 0;
+}
+
+.hotel-title {
+  font-size: 3rem; // Adjust size as needed
+  text-align: center;
+  margin: 0;
+  padding: 200px; 
 }

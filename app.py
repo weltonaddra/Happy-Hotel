@@ -20,3 +20,4 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
 
 #flask run to run the app
+#flask --app app.py --debug run
