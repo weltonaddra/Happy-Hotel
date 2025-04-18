@@ -140,17 +140,30 @@ body {
 
 .title-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh; // Full viewport height
-  width: 100vw; // Full viewport width
-  background-color: var(--cui-tertiary-bg); // Optional: match the background color
-  margin: 0;
+  justify-content: center;
+  flex: 1; // take up remaining space
+  height: 100px; // match your header height
 }
 
 .hotel-title {
-  font-size: 3rem; // Adjust size as needed
-  text-align: center;
+  font-size: 5rem;
   margin: 0;
-  padding: 200px; 
+  text-decoration-color: brown;
+  position: relative;
+  top: 20px; // moves down
+  left: 2000px; // moves right
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
+
+
+.title-container {
+  border: 1px solid red;
+}
+.hotel-title {
+  border: 1px solid green;
+}
+
