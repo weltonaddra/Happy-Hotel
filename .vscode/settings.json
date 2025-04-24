@@ -4,7 +4,7 @@
     {
       "format": "expanded",
       "extensionName": ".css",
-      "savePath": "/templates/static/css"
+      "savePath": "/frontend/templates/static/css"
     }
   ],
   "liveSassCompile.settings.excludeList": [],

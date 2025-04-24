@@ -1,0 +1,25 @@
+Templates directory holds html files 
+
+ layout.html        <-- Base template 
+ index.html         <-- Home page
+ guests.html        <-- Guest list
+ rooms.html         <-- Room list
+ reservations.html  <-- Reservations
+
+Credits for the template used is in credits file
+    credits.html       <-- Credits for the template used
+    base.html          <-- Base template for all pages
+    login.html         <-- Login page
+    register.html      <-- Registration page
+    profile.html       <-- User profile page
+    error.html         <-- Error page
+    success.html       <-- Success page
+    search.html        <-- Search results page
+    contact.html       <-- Contact page
+    about.html         <-- About page
+    terms.html         <-- Terms and conditions page
+    privacy.html       <-- Privacy policy page
+    sitemap.xml        <-- Sitemap for search engines
+    robots.txt         <-- Robots.txt file for search engines
+
+    For scss file you need to download live sass compiler extension before running 
