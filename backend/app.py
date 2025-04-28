@@ -1,28 +1,46 @@
 from flask import Flask, render_template, jsonify
+from services.test_service import TestService
 
 app = Flask(__name__, template_folder='../frontend/templates', static_folder='../frontend/static')
 
+# Initialize TestService
+test_service = TestService()
+test_service.create_fake_guests(20)
+test_service.create_fake_rooms(10)
+test_service.create_fake_reservations(20)
+
+# Home page (Reservations)
 @app.route('/')
 def home():
-    return render_template('layout.html')  # Ensure layout.html exists in the new templates folder
+    reservations = test_service.get_all_reservations()
+    return render_template('layout.html', reservations=reservations, active_page='reservations')
 
-@app.route('/api/rooms', methods=['GET'])
-def get_rooms():
-    rooms = [
-        {"id": 1, "name": "Room A"},
-        {"id": 2, "name": "Room B"},
-        {"id": 3, "name": "Room C"}
-    ]
-    return jsonify({"rooms": rooms})
+# Guests page
+@app.route('/guests')
+def guests():
+    guests = test_service.guests
+    return render_template('guests.html', guests=guests, active_page='guests')
 
-reservations = [
-    {"guest_name": "John Doe", "room": 101, "checkin": "2025-04-15", "checkout": "2025-04-18"},
-    {"guest_name": "Jane Smith", "room": 202, "checkin": "2025-04-16", "checkout": "2025-04-19"}
-]
+# Rooms page
+@app.route('/rooms')
+def rooms():
+    rooms = test_service.rooms
+    return render_template('rooms.html', rooms=rooms, active_page='rooms')
 
-@app.route("/api/reservations")
+# API for reservations
+@app.route('/api/reservations')
 def get_reservations():
-    return jsonify(reservations)
+    return jsonify(test_service.get_all_reservations())
+
+# API for guests
+@app.route('/api/guests')
+def get_guests():
+    return jsonify([guest.__dict__ for guest in test_service.guests])
+
+# API for rooms
+@app.route('/api/rooms')
+def get_rooms():
+    return jsonify([room.__dict__ for room in test_service.rooms])
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

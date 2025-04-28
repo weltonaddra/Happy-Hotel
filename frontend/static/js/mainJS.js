@@ -1,10 +1,20 @@
-function toggleDropdown(event) {
-  event.preventDefault();
-  const dropdown = event.target.closest('.nav-item').querySelector('.dropdown');
-  const arrow = event.target.querySelector('.arrow');
-  dropdown.classList.toggle('show');
-  arrow.classList.toggle('rotate');
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+  dropdownToggles.forEach((toggle) => {
+    toggle.addEventListener("click", (event) => {
+      event.preventDefault();
+      const parent = toggle.parentElement;
+      parent.classList.toggle("show");
+
+      // Rotate the arrow
+      const arrow = toggle.querySelector(".arrow");
+      if (arrow) {
+        arrow.classList.toggle("rotate");
+      }
+    });
+  });
+});
 
   document.addEventListener("DOMContentLoaded", () => {
     fetch("/api/reservations")

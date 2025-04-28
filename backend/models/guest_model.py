@@ -1,8 +1,9 @@
 class Guest:
-    def __init__(self, id: int, name: str, email: str, room_id: int, check_in_date: str, check_out_date: str = ""):
+    def __init__(self, id: int, name: str, email: str, phone: str):
         self.id = id
         self.name = name
         self.email = email
+        self.phone = phone
 
 
     def to_dict(self):

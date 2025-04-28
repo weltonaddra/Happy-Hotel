@@ -1,60 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Hotel</title>
-  <link rel="stylesheet" href="/static/css/style.css">
+-->
+{% extends "base.html" %}
 
-</head>
-<body>
-  <!-- Sidebar -->
-  <div class="sidebar-nav">
-    <ul>
-      <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
-      <li class="nav-item"><a class="nav-link" href="reservations.html">Reservations</a></li>
-      <li class="nav-item"><a class="nav-link" href="checkin.html">Arrivals</a></li>
-      <li class="nav-item"><a class="nav-link" href="checkout.html">Departures</a></li>
-      <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
-      <li class="nav-item"><a class="nav-link" href="guests.html">Guests</a></li>
-      <li class="nav-item">
-        <a class="nav-link dropdown-toggle" href="#" onclick="toggleDropdown(event)">
-          More <span class="arrow">&#9662;</span>
-        </a>
-        <ul class="dropdown">
-          <li><a class="nav-link" href="#">Settings</a></li>
-          <li><a class="nav-link" href="#">Logs</a></li>
-          <li><a class="nav-link" href="#">Help</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+{% block title %}Reservations{% endblock %}
 
-  <!-- Main Content -->
-  <div class="main-content">
-    <div class="title-container">
-      <h1 class="hotel-title">Happy Hotel</h1>
-    </div>
-    <div class="content">
-      <h2>Reservations</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Reservation ID</th>
-            <th>Guest Name</th>
-            <th>Check-in Date</th>
-            <th>Check-out Date</th>
-            <th>Room Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Reservation data will go here -->
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <script src="/static/js/mainJS.js"></script>
-
-</body>
-</html>
+{% block content %}
+<h2>Reservations</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Guest Name</th>
+      <th>Check-in Date</th>
+      <th>Check-out Date</th>
+      <th>Room Type</th>
+      <th>Reservation ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for reservation in reservations %}
+    <tr>
+      <td>{{ reservation.guest_name }}</td>
+      <td>{{ reservation.check_in_date }}</td>
+      <td>{{ reservation.check_out_date }}</td>
+      <td>{{ reservation.room_type }}</td>
+      <td>{{ reservation.reservation_id }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

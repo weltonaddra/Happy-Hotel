@@ -3,17 +3,21 @@ body {
   margin: 0;
   display: flex;
   height: 100vh;
+  overflow: hidden; /* Prevent body overflow */
 }
 
 /* Sidebar */
 .sidebar-nav {
   background-color: #34495e;
-  width: 15%;
-  height: 100%;
+  width: 200px; /* Fixed width for larger screens */
+  height: 100vh; /* Full height */
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  position: fixed; /* Fix the sidebar to the left */
+  top: 0;
+  left: 0;
 }
 
 .sidebar-nav ul {
@@ -42,10 +46,18 @@ body {
   background-color: #2c3e50;
 }
 
+.nav-link.active {
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: underline;
+}
+
 .sidebar-nav .nav-item .dropdown {
   display: none;
-  margin-left: 15px;
-  list-style: none;
+}
+
+.sidebar-nav .nav-item.dropdown.show .dropdown {
+  display: block;
 }
 
 .sidebar-nav .nav-item .dropdown.show {
@@ -60,8 +72,49 @@ body {
   transform: rotate(180deg);
 }
 
+/* Dropdown Styling */
+.sidebar-nav .dropdown-menu {
+  display: none; /* Hidden by default */
+  background-color: #34495e; /* Match the sidebar background */
+  padding: 10px;
+  border: none;
+  position: absolute;
+  left: 0; /* Align with the parent button */
+  top: 100%; /* Position directly below the parent button */
+  z-index: 1000;
+  width: 100%; /* Match the width of the parent button */
+}
+
+.sidebar-nav .nav-item.dropdown.show .dropdown-menu {
+  display: block; /* Show when parent has 'show' class */
+}
+
+.sidebar-nav .dropdown-menu .dropdown-item {
+  color: #ecf0f1; /* Light text color */
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-nav .dropdown-menu .dropdown-item:hover {
+  background-color: #2c3e50; /* Darker hover effect */
+  color: #ffffff; /* Ensure text is readable */
+}
+
+/* Arrow Rotation */
+.nav-item.dropdown .arrow {
+  transition: transform 0.3s ease;
+}
+
+.nav-item.dropdown.show .arrow {
+  transform: rotate(180deg); /* Flip the arrow when dropdown is open */
+}
+
 /* Main Content */
 .main-content {
+  margin-left: 200px; /* Match the sidebar width */
   flex: 1;
   display: flex;
   flex-direction: column;
