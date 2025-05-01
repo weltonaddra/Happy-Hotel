@@ -25,7 +25,7 @@ class TestService:
     def create_fake_rooms(self, count=10):
         for i in range(1, count + 1):
             room = Room(
-                room_number=random.randint(1, count),
+                room_number= count,
                 room_type=random.choice(["Single", "Double", "Suite"]),
                 price_per_night=round(random.uniform(50.0, 500.0), 2),
                 is_occupied=random.choice([True, False])

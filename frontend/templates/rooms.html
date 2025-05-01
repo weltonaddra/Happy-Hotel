@@ -7,7 +7,6 @@
 <table>
   <thead>
     <tr>
-      <th>ID</th>
       <th>Room Number</th>
       <th>Room Type</th>
       <th>Price Per Night</th>
@@ -16,7 +15,6 @@
   <tbody>
     {% for room in rooms %}
     <tr>
-      <td>{{ room.id }}</td>
       <td>{{ room.room_number }}</td>
       <td>{{ room.room_type }}</td>
       <td>${{ room.price_per_night }}</td>

@@ -5,9 +5,9 @@ app = Flask(__name__, template_folder='../frontend/templates', static_folder='..
 
 # Initialize TestService
 test_service = TestService()
-test_service.create_fake_guests(20)
-test_service.create_fake_rooms(10)
-test_service.create_fake_reservations(20)
+test_service.create_fake_guests(30)
+test_service.create_fake_rooms(40)
+test_service.create_fake_reservations(30)
 
 # Home page (Reservations)
 @app.route('/')
